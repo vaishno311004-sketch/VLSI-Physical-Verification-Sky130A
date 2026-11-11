@@ -1,0 +1,7 @@
+* NGSPICE file created from cmos_inverter.ext - technology: sky130A
+
+.subckt cmos_inverter
+X0 Y A GND GND sky130_fd_pr__nfet_01v8 ad=0.54 pd=3 as=0.54 ps=3 w=0.6 l=0.2
+X1 Y A VDD VDD sky130_fd_pr__pfet_01v8 ad=0.855 pd=3.7 as=0.855 ps=3.7 w=0.95 l=0.2
+.ends
+
