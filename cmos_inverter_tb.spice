@@ -1,0 +1,24 @@
+* SKY130A CMOS Inverter Transient Simulation
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.include /home/vidyashree/open_pdks/cmos_inverter.spice
+
+* Power supply: 1.8 V
+VDD VDD 0 DC 1.8
+
+* Input pulse: 0 V to 1.8 V
+VIN A 0 PULSE(0 1.8 0 100p 100p 5n 10n)
+
+* CMOS inverter
+XINV VDD 0 A Y cmos_inverter
+
+* Output load capacitance
+CLOAD Y 0 5f
+
+.control
+tran 10p 30n
+plot v(A) v(Y)
+.endc
+
+.end

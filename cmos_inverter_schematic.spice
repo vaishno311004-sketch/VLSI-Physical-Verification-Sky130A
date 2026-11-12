@@ -1,0 +1,6 @@
+* SKY130A CMOS inverter reference circuit
+
+.subckt cmos_inverter VDD GND A Y
+XMN Y A GND GND sky130_fd_pr__nfet_01v8 w=0.6 l=0.2
+XMP Y A VDD VDD sky130_fd_pr__pfet_01v8 w=0.95 l=0.2
+.ends cmos_inverter
